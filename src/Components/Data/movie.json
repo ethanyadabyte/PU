@@ -1,0 +1,49 @@
+{
+  "adult": false,
+  "backdrop_path": "/wmx5vrNH6GEpv4NLACfibZlA1bq.jpg",
+  "belongs_to_collection": null,
+  "budget": 0,
+  "genres": [
+    { "id": 80, "name": "Crime" },
+    { "id": 18, "name": "Drama" }
+  ],
+  "homepage": "https://www.netflix.com/title/80202877",
+  "id": 628534,
+  "imdb_id": "tt6571548",
+  "original_language": "en",
+  "original_title": "The White Tiger",
+  "overview": "An ambitious Indian driver uses his wit and cunning to escape from poverty and rise to the top. An epic journey based on the New York Times bestseller.",
+  "popularity": 239.252,
+  "poster_path": "/7K4mdWaLGF2F4ASb2L12tlya9c9.jpg",
+  "production_companies": [
+    {
+      "id": 144369,
+      "logo_path": null,
+      "name": "Lava Media",
+      "origin_country": "SG"
+    },
+    {
+      "id": 10944,
+      "logo_path": "/jgNxPfOQc4ATCTFDSbjPljn6u58.png",
+      "name": "Noruz Films (I)",
+      "origin_country": "US"
+    }
+  ],
+  "production_countries": [
+    { "iso_3166_1": "IN", "name": "India" },
+    { "iso_3166_1": "US", "name": "United States of America" }
+  ],
+  "release_date": "2021-01-13",
+  "revenue": 0,
+  "runtime": 125,
+  "spoken_languages": [
+    { "english_name": "English", "iso_639_1": "en", "name": "English" },
+    { "english_name": "Hindi", "iso_639_1": "hi", "name": "हिन्दी" }
+  ],
+  "status": "Released",
+  "tagline": "Eat or get eaten up.",
+  "title": "The White Tiger",
+  "video": false,
+  "vote_average": 6.7,
+  "vote_count": 151
+}
