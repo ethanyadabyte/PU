@@ -9,7 +9,7 @@ const queryClient = new QueryClient();
 function App() {
   const [search, setSearch] = useState("Fast");
   return (
-    <div className="bg-gray-200 p-4 ">
+    <div className="bg-gray-700 p-4 ">
       <QueryClientProvider client={queryClient}>
         <div className="bg-gray-700 rounded-md p-3 mx-10 ">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,7 +71,7 @@ function Search(props: { query: string }) {
   if (error) return <div>An error has occurred {JSON.stringify(error)} </div>;
 
   return (
-    <div className="m-4 ">
+    <div className="ml-12 ">
       <MovieList results={data?.results || []} />
     </div>
   );

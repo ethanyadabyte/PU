@@ -12,9 +12,9 @@ interface MovieListProps {
 
 export const MovieList = (props: MovieListProps) => {
   return (
-    <ul className="grid grid-cols-6 gap-none mt-10 mx-20 ml-32">
+    <ul className="grid grid-cols-5 gap-none mt-14 ml-36 mr-32">
       {props.results.map((movie) => (
-        <li className="my-4 flex hide text-transparent hover:text-white hover:bg-gray-300 w-56 h-70 rounded-lg">
+        <li className="my-4 flex hide text-transparent hover:text-white hover:bg-gray-300 w-52 h-70 rounded-lg">
           <img
             className="h-70 rounded-lg  "
             src={
@@ -23,11 +23,10 @@ export const MovieList = (props: MovieListProps) => {
             }
             alt=""
           />
-          <div className="-ml-44 mt-2">
-            <p className="text-base   w-32 font-medium ">
+          <div className="w-52 h-70 hover:bg-gray-500 -ml-52 rounded-lg text-center ">
+            <p className="text-base mt-2 mx-2  font-medium ">
               {movie.original_title}
             </p>
-            {/*<p className="text-sm text-gray-500">{movie.overview}</p>*/}
           </div>
         </li>
       ))}
