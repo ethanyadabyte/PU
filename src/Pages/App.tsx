@@ -7,7 +7,7 @@ import { StorageIcon } from "../Components/Icons/StorageIcon";
 const queryClient = new QueryClient();
 
 function App() {
-  const [search, setSearch] = useState("samurai");
+  const [search, setSearch] = useState("Fast");
   return (
     <div className="bg-gray-200 p-4 ">
       <QueryClientProvider client={queryClient}>
@@ -20,7 +20,7 @@ function App() {
                     <StorageIcon />
                   </div>
                 </div>
-                <div className="hidden md:block">
+                <div className="hidden md:block mr-96">
                   <ul className="ml-10 flex items-baseline space-x-4 ">
                     <li className="text-red-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium">
                       Movies
@@ -39,7 +39,7 @@ function App() {
                     </li>
                   </ul>
                 </div>
-                <div className=" mr-0">
+                <div className=" ml-96">
                   <SearchBox value={search} onChange={setSearch} />
                 </div>
               </div>
@@ -71,7 +71,7 @@ function Search(props: { query: string }) {
   if (error) return <div>An error has occurred {JSON.stringify(error)} </div>;
 
   return (
-    <div className="m-4">
+    <div className="m-4 ">
       <MovieList results={data?.results || []} />
     </div>
   );
