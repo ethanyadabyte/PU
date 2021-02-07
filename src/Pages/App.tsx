@@ -7,7 +7,8 @@ import { StorageIcon } from "../Components/Icons/StorageIcon";
 const queryClient = new QueryClient();
 
 function App() {
-  const [search, setSearch] = useState("Fast");
+  const [search, setSearch] = useState("the");
+  const [pages, setPages] = useState(1);
   return (
     <div className="bg-gray-700 p-4 ">
       <QueryClientProvider client={queryClient}>
@@ -50,18 +51,18 @@ function App() {
           </div>
         </div>
 
-        <Search query={search} />
+        <Search query={search} page={pages} setPage={setPages} />
       </QueryClientProvider>
     </div>
   );
 }
 
-function Search(props: { query: string }) {
+function Search(props: { query: string; page: any; setPage: any }) {
   const { isLoading, error, data } = useQuery(
     ["movieSearch", props.query],
     () =>
       fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=bc7d2aaf31b58d13aba81c2dfa7e88ab&language=en-US&page=1&include_adult=false&query=${props.query}`
+        `https://api.themoviedb.org/3/search/movie?api_key=bc7d2aaf31b58d13aba81c2dfa7e88ab&language=en-US&page=${props.page}&include_adult=false&query=${props.query}`
       ).then((res) => res.json()),
     {}
   );
@@ -71,8 +72,20 @@ function Search(props: { query: string }) {
   if (error) return <div>An error has occurred {JSON.stringify(error)} </div>;
 
   return (
-    <div className="ml-12 ">
-      <MovieList results={data?.results || []} />
+    <div>
+      <div className="ml-20">
+        <MovieList results={data?.results || []} />
+      </div>
+      <div className="text-lg  flex justify-center mt-8 ml-4">
+        <button
+          onChange={() => props.setPage + 1}
+          className="px-4 m-1 bg-gray-300 rounded"
+        >
+          {"<"}
+        </button>
+        <p className="px-3 m-1 bg-gray-300 rounded">{props.page}</p>
+        <button className="px-4 m-1 bg-gray-300 rounded">{">"}</button>
+      </div>
     </div>
   );
 }
