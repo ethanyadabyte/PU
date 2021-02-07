@@ -7,7 +7,7 @@ import { StorageIcon } from "../Components/Icons/StorageIcon";
 const queryClient = new QueryClient();
 
 function App() {
-  const [search, setSearch] = useState("the");
+  const [search, setSearch] = useState("the ");
   const [pages, setPages] = useState(1);
   return (
     <div className="bg-gray-700 p-4 ">
