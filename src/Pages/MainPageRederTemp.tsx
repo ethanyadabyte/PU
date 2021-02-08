@@ -7,7 +7,7 @@ import TvShowsPage from "./TvShowsPage";
 function App() {
   return (
     <Router>
-      <div>
+      <div className="bg-gray-700 w-screen h-screen overflow-visible  ">
         <Switch>
           <Route path="/" exact />
           <Route path="/Movies" component={MoviePage} />

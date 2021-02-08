@@ -2,7 +2,8 @@ import React from "react";
 
 interface Movie {
   poster_path: string;
-  original_title: string;
+  original_title?: string;
+  original_name?: string;
   overview: string;
 }
 
@@ -26,6 +27,7 @@ export const MovieList = (props: MovieListProps) => {
           <div className="w-52 h-70 hover:bg-gray-600 -ml-52  rounded-lg text-center ">
             <p className="text-base mt-2 mx-2  font-medium ">
               {movie.original_title}
+              {movie.original_name}
             </p>
             <p className="text-xs h-44  overflow-hidden mx-3 mt-3 text-justify">
               {movie.overview}

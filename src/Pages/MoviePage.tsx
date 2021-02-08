@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const queryClient = new QueryClient();
 
 function MoviePage() {
-  const [search, setSearch] = useState("the");
+  const [search, setSearch] = useState("Search");
   const [pages, setPages] = useState(1);
   return (
     <div className="bg-gray-700 p-4 ">
@@ -25,7 +25,7 @@ function MoviePage() {
                 <div className="hidden md:block mr-96">
                   <ul className="ml-10 flex items-baseline space-x-4 ">
                     <Link to="/Movies">
-                      <li className="text-red-500 hover:bg-gray-300 hover:text-white px-3 py-2 rounded-md text-xl font-medium">
+                      <li className="text-red-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium">
                         Movies
                       </li>
                     </Link>
@@ -74,7 +74,7 @@ function Search(props: { query: string; page: any; setPage: any }) {
     {}
   );
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div></div>;
 
   if (error) return <div>An error has occurred {JSON.stringify(error)} </div>;
 
