@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
-import { MovieList } from "../Components/MovieList";
+import { Item } from "../Components/Item";
 import { SearchBox } from "../Components/SearchBox";
 import { StorageIcon } from "../Components/Icons/StorageIcon";
 import { Link } from "react-router-dom";
 
 const queryClient = new QueryClient();
 
-function SearchPage() {
+function ItemPage(match) {
   const [search, setSearch] = useState("Search");
   return (
     <div className="bg-gray-700 p-4 ">
@@ -28,7 +28,7 @@ function SearchPage() {
                         Movies
                       </li>
                     </Link>
-                    <Link to="Tv Shows">
+                    <Link to="/Tv Shows">
                       <li className="text-red-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium">
                         Tv Shows
                       </li>
@@ -44,11 +44,9 @@ function SearchPage() {
                     </li>
                   </ul>
                 </div>
-                <Link to="/Search">
-                  <div className=" ml-96">
-                    <SearchBox value={search} onChange={setSearch} />
-                  </div>
-                </Link>
+                <div className=" ml-96">
+                  <SearchBox value={search} onChange={setSearch} />
+                </div>
               </div>
               <button className="bg-transparent p-1 ml-0 rounded-full text-blue-500 hover:text-gray-300 focus:outline-none focus:ring-none text-xl">
                 SignIn
@@ -57,20 +55,22 @@ function SearchPage() {
           </div>
         </div>
 
-        <Search query={search} />
+        <Search
+          query={search}
+          Id={match.match.params.id}
+          Type={match.match.params.type}
+        />
       </QueryClientProvider>
     </div>
   );
 }
 
-function Search(props: { query: string }) {
+function Search(props: { query: string; Id: string; Type: string }) {
   const { isLoading, error, data } = useQuery(
     ["movieSearch", props.query],
     () =>
       fetch(
-        `https://api.themoviedb.org/3/search/multi?api_key=bc7d2aaf31b58d13aba81c2dfa7e88ab&language=en-US&page=${1}&include_adult=false&query=${
-          props.query
-        }`
+        `https://api.themoviedb.org/3/${props.Type}/${props.Id}?api_key=bc7d2aaf31b58d13aba81c2dfa7e88ab&language=en-US`
       ).then((res) => res.json()),
     {}
   );
@@ -80,17 +80,15 @@ function Search(props: { query: string }) {
   if (error) return <div>An error has occurred {JSON.stringify(error)} </div>;
 
   return (
-    <div>
-      <div className="ml-20">
-        <MovieList results={data?.results || []} />
-      </div>
-      <div className="text-lg  flex justify-center mt-8 ml-4">
-        <button className="px-4 m-1 bg-gray-300 rounded">{"<"}</button>
-        <p className="px-3 m-1 bg-gray-300 rounded">{1}</p>
-        <button className="px-4 m-1 bg-gray-300 rounded">{">"}</button>
-      </div>
+    <div className="ml-20">
+      <Item
+        overview={data?.overview || []}
+        poster_path={data?.poster_path || []}
+        original_title={data?.original_title || []}
+        original_name={data?.original_name || []}
+      />
     </div>
   );
 }
 
-export default SearchPage;
+export default ItemPage;

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
-import { MovieList } from "../Components/MovieList";
+
 import { SearchBox } from "../Components/SearchBox";
 import { StorageIcon } from "../Components/Icons/StorageIcon";
 import { Link } from "react-router-dom";
+import { TvList } from "../Components/TvList";
 
 const queryClient = new QueryClient();
 
@@ -81,7 +82,7 @@ function Search(props: { query: string; page: any; setPage: any }) {
   return (
     <div>
       <div className="ml-20">
-        <MovieList results={data?.results || []} />
+        <TvList results={data?.results || []} />
       </div>
       <div className="text-lg  flex justify-center mt-8 ml-4">
         <button

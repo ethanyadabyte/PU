@@ -9,7 +9,6 @@ const queryClient = new QueryClient();
 
 function MoviePage() {
   const [search, setSearch] = useState("Search");
-  const [pages, setPages] = useState(1);
   return (
     <div className="bg-gray-700 p-4 ">
       <QueryClientProvider client={queryClient}>
@@ -29,7 +28,7 @@ function MoviePage() {
                         Movies
                       </li>
                     </Link>
-                    <Link to="Tv Shows">
+                    <Link to="/Tv Shows">
                       <li className="text-red-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium">
                         Tv Shows
                       </li>
@@ -58,13 +57,13 @@ function MoviePage() {
           </div>
         </div>
 
-        <Search query={search} page={pages} setPage={setPages} />
+        <Search query={search} />
       </QueryClientProvider>
     </div>
   );
 }
 
-function Search(props: { query: string; page: any; setPage: any }) {
+function Search(props: { query: string }) {
   const { isLoading, error, data } = useQuery(
     ["movieSearch", props.query],
     () =>
@@ -84,13 +83,8 @@ function Search(props: { query: string; page: any; setPage: any }) {
         <MovieList results={data?.results || []} />
       </div>
       <div className="text-lg  flex justify-center mt-8 ml-4">
-        <button
-          onChange={() => props.setPage + 1}
-          className="px-4 m-1 bg-gray-300 rounded"
-        >
-          {"<"}
-        </button>
-        <p className="px-3 m-1 bg-gray-300 rounded">{props.page}</p>
+        <button className="px-4 m-1 bg-gray-300 rounded">{"<"}</button>
+        <p className="px-3 m-1 bg-gray-300 rounded">{1}</p>
         <button className="px-4 m-1 bg-gray-300 rounded">{">"}</button>
       </div>
     </div>
