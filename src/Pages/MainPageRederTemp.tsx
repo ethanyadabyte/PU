@@ -10,7 +10,7 @@ function App() {
     <Router>
       <div className="bg-gray-700 w-screen h-screen overflow-visible  ">
         <Switch>
-          <Route path="/" exact />
+          <Route path="/" exact component={MoviePage} />
           <Route path="/Movies" component={MoviePage} />
           <Route path="/Tv Shows" component={TvShowsPage} />
           <Route path="/Search" component={SearchPage} />
