@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "react-scripts build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build-css": "tailwindcss build src/Index.css -o Public.css"
@@ -26,6 +26,6 @@
     "@vitejs/plugin-react-refresh": "^1.1.0",
     "babel-loader": "^8.2.2",
     "typescript": "^4.1.2",
-    "vite": "^2.0.0-beta.12"
+    "vite": "^2.0.0-beta.69"
   }
 }
