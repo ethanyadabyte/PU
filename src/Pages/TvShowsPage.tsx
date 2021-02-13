@@ -10,7 +10,13 @@ const queryClient = new QueryClient();
 
 function TvShowsPage() {
   const [search, setSearch] = useState("Search");
-  const [pages, setPages] = useState(1);
+  const [page, setPage] = useState(1);
+  function Plus() {
+    setPage((PP) => PP + 1);
+  }
+  function Min() {
+    setPage((PP) => PP - 1);
+  }
   return (
     <div className="bg-gray-700 p-4 ">
       <QueryClientProvider client={queryClient}>
@@ -59,18 +65,30 @@ function TvShowsPage() {
           </div>
         </div>
 
-        <Search query={search} page={pages} setPage={setPages} />
+        <Search query={search} Page={page} />
+        <div className="text-lg  flex justify-center mt-8 ml-4">
+          <button onClick={Min} className="px-4 m-1 bg-gray-500 rounded">
+            {"<"}
+          </button>
+          <p className="px-3 m-1 bg-gray-500 rounded">{page}</p>
+          <button
+            onClick={Plus}
+            className="px-4 m-1 focuse-ring-none bg-gray-500 rounded"
+          >
+            {">"}
+          </button>
+        </div>
       </QueryClientProvider>
     </div>
   );
 }
 
-function Search(props: { query: string; page: any; setPage: any }) {
+function Search(props: { query: string; Page: any }) {
   const { isLoading, error, data } = useQuery(
-    ["movieSearch", props.query],
+    ["movieSearch", props.query, props.Page],
     () =>
       fetch(
-        `https://api.themoviedb.org/3/tv/popular?api_key=bc7d2aaf31b58d13aba81c2dfa7e88ab&language=en-US&page=1`
+        `https://api.themoviedb.org/3/tv/popular?api_key=bc7d2aaf31b58d13aba81c2dfa7e88ab&language=en-US&page=${props.Page}`
       ).then((res) => res.json()),
     {}
   );
@@ -80,20 +98,8 @@ function Search(props: { query: string; page: any; setPage: any }) {
   if (error) return <div>An error has occurred {JSON.stringify(error)} </div>;
 
   return (
-    <div>
-      <div className="ml-20">
-        <TvList results={data?.results || []} />
-      </div>
-      <div className="text-lg  flex justify-center mt-8 ml-4">
-        <button
-          onChange={() => props.setPage + 1}
-          className="px-4 m-1 bg-gray-300 rounded"
-        >
-          {"<"}
-        </button>
-        <p className="px-3 m-1 bg-gray-300 rounded">{props.page}</p>
-        <button className="px-4 m-1 bg-gray-300 rounded">{">"}</button>
-      </div>
+    <div className="ml-20">
+      <TvList results={data?.results || []} />
     </div>
   );
 }

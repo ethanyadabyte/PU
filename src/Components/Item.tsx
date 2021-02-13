@@ -15,7 +15,7 @@ export const Item = (props: Movie) => {
         src={"https://image.tmdb.org/t/p//w342" + props.poster_path}
         alt=""
       />
-      <div className="hover:bg-gray-600  ">
+      <div className="  ">
         <p className="text-4xl mt-2 ml-5  font-medium ">
           {props.original_title}
           {props.original_name}
