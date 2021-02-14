@@ -4,6 +4,7 @@ import SearchPage from "./SearchPage";
 import MoviePage from "./MoviePage";
 import TvShowsPage from "./TvShowsPage";
 import ItemPage from "./ItemPage";
+import Cast from "../Components/Cast";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/Movies" component={MoviePage} />
           <Route path="/Tv Shows" component={TvShowsPage} />
           <Route path="/Search" component={SearchPage} />
+          <Route path="/Cast" component={Cast} />
           <Route path="/Item/:id/:type" component={ItemPage} />
         </Switch>
       </div>

@@ -4,7 +4,6 @@ import { MovieList } from "../Components/MovieList";
 import { SearchBox } from "../Components/SearchBox";
 import { StorageIcon } from "../Components/Icons/StorageIcon";
 import { Link } from "react-router-dom";
-import { PageCount } from "../Components/Pagecount";
 
 const queryClient = new QueryClient();
 

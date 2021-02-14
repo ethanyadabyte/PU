@@ -4,6 +4,7 @@ import { Item } from "../Components/Item";
 import { SearchBox } from "../Components/SearchBox";
 import { StorageIcon } from "../Components/Icons/StorageIcon";
 import { Link } from "react-router-dom";
+import Cast from "../Components/Cast";
 
 const queryClient = new QueryClient();
 
@@ -60,6 +61,8 @@ function ItemPage(match) {
           Id={match.match.params.id}
           Type={match.match.params.type}
         />
+        <p className="text-2xl mt-7 ml-32 text-gray-200">Cast</p>
+        <Cast ID={match.match.params.id} Type={match.match.params.type} />
       </QueryClientProvider>
     </div>
   );
