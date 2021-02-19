@@ -61,6 +61,7 @@ function ItemPage(match) {
           Id={match.match.params.id}
           Type={match.match.params.type}
         />
+
         <p className="text-2xl mt-7 ml-32 text-gray-200">Cast</p>
         <Cast ID={match.match.params.id} Type={match.match.params.type} />
       </QueryClientProvider>
@@ -89,6 +90,14 @@ function Search(props: { query: string; Id: string; Type: string }) {
         poster_path={data?.poster_path || []}
         original_title={data?.original_title || []}
         original_name={data?.original_name || []}
+        first_air_date={data?.first_air_date || []}
+        release_date={data?.release_date || []}
+        status={data?.status || []}
+        original_language={data?.original_language || []}
+        runtime={data?.runtime || []}
+        budget={data?.budget || []}
+        revenue={data?.revenue || []}
+        vote_average={data?.vote_average || []}
       />
     </div>
   );

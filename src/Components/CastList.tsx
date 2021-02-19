@@ -24,7 +24,7 @@ export const CastList = (props: CastProps) => {
             <p className="text-base mt-2 w-32 p-0 font-medium ">
               {cast.character}
             </p>
-            <p className="text-base w-32 ">{cast.name}</p>
+            <p className="text-base w-32 text-gray-400 ">{cast.name}</p>
           </div>
         </li>
       ))}
