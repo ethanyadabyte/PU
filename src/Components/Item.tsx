@@ -85,11 +85,11 @@ export const Item = (props: Movie) => {
           <div className="pt-10 pl-5">
             <div className="p-4">
               <h1 className="">Budget:</h1>
-              <h1 className="text-gray-400">{props.budget}</h1>
+              <h1 className="text-gray-400">{` $${props.budget}`}</h1>
             </div>
             <div className="p-4">
               <h1 className="">Revenue:</h1>
-              <h1 className="text-gray-400">{props.revenue}</h1>
+              <h1 className="text-gray-400">{` $${props.revenue}`}</h1>
             </div>
           </div>
         </div>
