@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": " vite build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build-css": "tailwindcss build src/Index.css -o Public.css"
