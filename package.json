@@ -6,13 +6,15 @@
     "build": " vite build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build-css": "tailwindcss build src/Index.css -o Public.css"
+    "build-css": "tailwindcss build src/Index.css -o src/Public.css"
   },
   "dependencies": {
+    "postcss": "^8.2.6",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-query": "^3.5.14",
     "react-router-dom": "^5.2.0",
+    "tailwind-scrollbar": "^1.2.3",
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
