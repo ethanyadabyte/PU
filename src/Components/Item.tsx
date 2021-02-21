@@ -34,6 +34,20 @@ export const Item = (props: Movie) => {
     M = O[0];
   }
   let R = "".concat(H, "h", " ", M, "m");
+  let pb = Number(props.budget);
+  let PB;
+  if (pb > 0) {
+    PB = `$${props.budget}`;
+  } else {
+    PB = "Undisclosed";
+  }
+  let pr = Number(props.revenue);
+  let PR;
+  if (pr > 0) {
+    PR = `$${props.revenue}`;
+  } else {
+    PR = "Undisclosed";
+  }
 
   return (
     <div className="flex justify-left mt-16 ml-10 w-11/12  text-gray-200 bg-gray-700 ">
@@ -85,11 +99,11 @@ export const Item = (props: Movie) => {
           <div className="pt-10 pl-5">
             <div className="p-4">
               <h1 className="">Budget:</h1>
-              <h1 className="text-gray-400">{` $${props.budget}`}</h1>
+              <h1 className="text-gray-400">{PB}</h1>
             </div>
             <div className="p-4">
               <h1 className="">Revenue:</h1>
-              <h1 className="text-gray-400">{` $${props.revenue}`}</h1>
+              <h1 className="text-gray-400">{PR}</h1>
             </div>
           </div>
         </div>
