@@ -45,9 +45,11 @@ function ItemPage(match) {
                     </li>
                   </ul>
                 </div>
-                <div className=" ml-96">
-                  <SearchBox value={search} onChange={setSearch} />
-                </div>
+                <Link to="/Search">
+                  <div className=" ml-96">
+                    <SearchBox value={search} onChange={setSearch} />
+                  </div>
+                </Link>
               </div>
               <button className="bg-transparent p-1 ml-0 rounded-full text-blue-500 hover:text-gray-300 focus:outline-none focus:ring-none text-xl">
                 SignIn
