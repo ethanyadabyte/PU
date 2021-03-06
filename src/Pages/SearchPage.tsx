@@ -52,7 +52,7 @@ function SearchPage() {
                   </ul>
                 </div>
                 <Link to="/Search">
-                  <div className=" ml-96">
+                  <div className=" ml-96 -mt-2">
                     <SearchBox value={search} onChange={setSearch} />
                   </div>
                 </Link>

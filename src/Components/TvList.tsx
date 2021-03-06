@@ -14,9 +14,9 @@ interface MovieListProps {
 
 export const TvList = (props: MovieListProps) => {
   return (
-    <ul className="grid grid-cols-5 gap-none mt-14 ml-36 mr-32">
+    <ul className="grid grid-cols-5 gap-none w-auto pl-4 bg-gray-700">
       {props.results.map((movie) => (
-        <Link to={`/Item/${movie.id}/tv`}>
+        <Link to={`/Item/${movie.id}/tv/ClosePath`}>
           <li className="my-4 flex hide text-transparent hover:text-gray-200 w-52 h-70 rounded-lg ml-2 ">
             <img
               className="w-52 h-70 rounded-lg  "
