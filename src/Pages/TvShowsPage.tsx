@@ -19,7 +19,7 @@ function TvShowsPage() {
     <div className="bg-gray-700">
       <QueryClientProvider client={queryClient}>
         <div className="mx-36 mt-14 bg-gray-700">
-          <Search Page={page} />
+          <TvShows Page={page} />
         </div>
         <div className="text-lg  flex justify-center mt-8 ml-4 pb-4">
           <button onClick={Min} className="px-4 m-1 bg-gray-500 rounded">
@@ -38,7 +38,7 @@ function TvShowsPage() {
   );
 }
 
-function Search(props: { Page: any }) {
+function TvShows(props: { Page: any }) {
   const { isLoading, error, data } = useQuery(
     ["movieSearch", props.Page],
     () =>

@@ -15,11 +15,12 @@ function MoviePage() {
   if (page < 1) {
     setPage(1);
   }
+
   return (
     <div className="bg-gray-700  ">
       <QueryClientProvider client={queryClient}>
         <div className="mx-36 mt-14 bg-gray-700">
-          <Search Page={page} />
+          <Movies Page={page} />
         </div>
         <div className="text-lg  flex justify-center mt-8 ml-4 pb-4">
           <button onClick={Min} className="px-4 m-1 bg-gray-500 rounded">
@@ -38,7 +39,7 @@ function MoviePage() {
   );
 }
 
-function Search(props: { Page: any }) {
+function Movies(props: { Page: any }) {
   const { isLoading, error, data } = useQuery(
     ["movieSearch", props.Page],
     () =>
@@ -52,7 +53,6 @@ function Search(props: { Page: any }) {
 
   if (error) return <div>An error has occurred {JSON.stringify(error)} </div>;
 
-  let P;
   return (
     <div className="ml-20">
       <MovieList results={data?.results || []} />

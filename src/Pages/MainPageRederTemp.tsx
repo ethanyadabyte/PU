@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import { Query, QueryClient, QueryClientProvider, useQuery } from "react-query";
 import SearchPage from "./SearchPage";
 import MoviePage from "./MoviePage";
 import TvShowsPage from "./TvShowsPage";
@@ -9,6 +9,7 @@ import Cast from "../Components/Cast";
 import { StorageIcon } from "../Components/Icons/StorageIcon";
 import { SearchBox } from "../Components/SearchBox";
 import { MovieList } from "../Components/MovieList";
+import FeedPage from "./FeedPage";
 
 const queryClient = new QueryClient();
 
@@ -28,7 +29,7 @@ function Router() {
   }
   return (
     <div className="bg-gray-700 h-screen">
-      <div className="bg-gray-700 h-full  overflow-visible ">
+      <div className="overflow-visible ">
         <QueryClientProvider client={queryClient}>
           <BrowserRouter>
             <div className="bg-gray-700 rounded-md p-3 ml-14 mr-10 pt-7 ">
@@ -52,9 +53,11 @@ function Router() {
                             Tv Shows
                           </li>
                         </Link>
-                        <li className="text-pink-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium">
-                          Feed
-                        </li>
+                        <Link to="/Feed">
+                          <li className="text-pink-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium">
+                            Feed
+                          </li>
+                        </Link>
                         <li className="text-pink-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xl font-medium">
                           List
                         </li>
@@ -80,6 +83,7 @@ function Router() {
               <Route path="/" exact component={MoviePage} />
               <Route path="/MoviesPage" exact component={MoviePage} />
               <Route path="/ShowsPage" exact component={TvShowsPage} />
+              <Route path="/Feed" exact component={FeedPage} />
               <Route
                 path="/Item/:id/:type/ClosePath"
                 exact
@@ -125,9 +129,25 @@ function Search(props: { query?: string; Page?: any }) {
     {}
   );
 
-  if (isLoading) return <div></div>;
-
-  if (error) return <div></div>;
+  if (isLoading)
+    return (
+      <div>
+        <h1>Loading</h1>
+      </div>
+    );
+  if (error)
+    return (
+      <div>
+        <h1>Error</h1>
+      </div>
+    );
+  if (props.query.length <= 0) {
+    return (
+      <h1 className="text-green-200 text-6xl text-center py-96">
+        Please Enter What You Are Searching For
+      </h1>
+    );
+  }
   return (
     <div className="ml-20">
       <MovieList results={data?.results || []} />
