@@ -12,7 +12,7 @@ interface CastProps {
 
 export const CastList = (props: CastProps) => {
   return (
-    <div className="  mt-4 overflow-x-auto scrollbar-w-4 scrollbar-track-gray-lighter scrollbar-thumb-rounded-2xl scrollbar-thumb-black scrolling-touch w-auto mx-36  rounded-2xl">
+    <div className="overflow-x-auto scrollbar-w-4 scrollbar-track-gray-lighter scrollbar-thumb-rounded-2xl scrollbar-thumb-black scrolling-touch w-auto mx-36 mt-4 rounded-2xl">
       <ul className="flex flex-linare   ">
         {props.results.map((cast) => (
           <li className="my-4 px-8 text-gray-200 rounded-lg  ml-1">
