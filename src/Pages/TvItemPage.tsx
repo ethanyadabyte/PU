@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
-import { Item } from "../Components/Item";
+import { TvItem } from "../Components/TvItem";
 import Cast from "../Components/Cast";
 
 const queryClient = new QueryClient();
@@ -9,20 +9,20 @@ function ItemPage(match) {
   return (
     <div className="bg-gray-700 p-4 ">
       <QueryClientProvider client={queryClient}>
-        <Search Id={match.match.params.id} Type={match.match.params.type} />
+        <Search Id={match.match.params.id} />
         <p className="text-2xl mt-7 ml-32 text-gray-200">Cast</p>
-        <Cast ID={match.match.params.id} Type={match.match.params.type} />
+        <Cast ID={match.match.params.id} Type="tv" />
       </QueryClientProvider>
     </div>
   );
 }
 
-function Search(props: { Id: string; Type: string }) {
+function Search(props: { Id: string }) {
   const { isLoading, error, data } = useQuery(
-    ["movieSearch", props.Id, props.Type],
+    ["movieSearch", props.Id],
     () =>
       fetch(
-        `https://api.themoviedb.org/3/${props.Type}/${props.Id}?api_key=bc7d2aaf31b58d13aba81c2dfa7e88ab&language=en-US`
+        `https://api.themoviedb.org/3/tv/${props.Id}?api_key=bc7d2aaf31b58d13aba81c2dfa7e88ab&language=en-US`
       ).then((res) => res.json()),
     {}
   );
@@ -33,19 +33,19 @@ function Search(props: { Id: string; Type: string }) {
 
   return (
     <div className="ml-20">
-      <Item
+      <TvItem
+        Id={props.Id}
         overview={data?.overview || []}
         poster_path={data?.poster_path || []}
-        original_title={data?.original_title || []}
         original_name={data?.original_name || []}
         first_air_date={data?.first_air_date || []}
         release_date={data?.release_date || []}
         status={data?.status || []}
         original_language={data?.original_language || []}
-        runtime={data?.runtime || []}
-        budget={data?.budget || []}
-        revenue={data?.revenue || []}
         vote_average={data?.vote_average || []}
+        number_of_episodes={data?.number_of_episodes || []}
+        number_of_seasons={data?.number_of_seasons || []}
+        episode_run_time={data?.episode_run_time || []}
       />
     </div>
   );

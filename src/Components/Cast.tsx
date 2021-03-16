@@ -5,8 +5,8 @@ import { CastList } from "../Components/CastList";
 const queryClient = new QueryClient();
 
 interface Id {
-  ID: any;
-  Type: any;
+  ID?: any;
+  Type?: any;
 }
 function Cast(props: Id) {
   return (

@@ -1,6 +1,8 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 interface Movie {
+  Id?: any;
+  Type?: any;
   poster_path?: string;
   original_title?: string;
   original_name?: string;
@@ -13,9 +15,11 @@ interface Movie {
   budget?: string;
   revenue?: string;
   vote_average?: string;
+  number_of_episodes?: any;
+  number_of_seasons?: any;
 }
 
-export const Item = (props: Movie) => {
+export const MovieItem = (props: Movie) => {
   let A = props.runtime;
   let B = Number(A) + 0.4;
   let C = B / 60;
@@ -27,7 +31,7 @@ export const Item = (props: Movie) => {
   let O = G.toString();
   let P = props.vote_average;
   let M;
-  console.log(P);
+
   if (O.length > 3) {
     M = "".concat(O[0], O[1]);
   } else {
@@ -48,7 +52,7 @@ export const Item = (props: Movie) => {
   } else {
     PR = "Undisclosed";
   }
-
+  console.log(A);
   return (
     <div className="flex justify-left mt-16 ml-10 w-11/12  text-gray-200 bg-gray-700 ">
       <img
@@ -66,9 +70,11 @@ export const Item = (props: Movie) => {
         </p>
         <p className="text-xl mt-4 text-gray-400"></p>
         <div className="flex">
-          <p className="h-10 w-20 rounded-2xl text-2xl bg-blue-500 mt-8 mb-0 pt-0.5 text-center  ">
-            {"Play"}
-          </p>
+          <Link to={`/Player/${props.Id}/movie`}>
+            <p className="h-10 w-20 rounded-2xl text-2xl bg-blue-500 mt-8 mb-0 pt-0.5 text-center  ">
+              {"Play"}
+            </p>
+          </Link>
         </div>
         <div className="h-64 w-7/12 bg-gray-700 -mr-4 flex flex-linear rounded-2xl ">
           <div className="pt-10 pr-4 pl-0">

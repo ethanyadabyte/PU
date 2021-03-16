@@ -18,7 +18,7 @@ export const MovieRowBig = (props: MovieRowBigProps) => {
     <div className="overflow-x-auto scrollbar-w-4 scrollbar-track-gray-lighter scrollbar-thumb-rounded-2xl scrollbar-thumb-black scrolling-touch w-auto mx-44 rounded-2xl">
       <ul className="flex flex-linare">
         {props.results.map((movie) => (
-          <Link to={`/Item/${movie.id}/movie/ClosePath`}>
+          <Link to={`/Item/${movie.id}/movie`}>
             <li className="mb-4  flex hide text-transparent hover:text-gray-200   w-96  rounded-lg ml-20 ">
               <img
                 className=" rounded-lg  "

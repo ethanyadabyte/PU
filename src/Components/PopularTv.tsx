@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { MovieRow } from "../Components/MovieRow";
+import { TvRow } from "../Components/TvRow";
 
 function PopularTv() {
   const { isLoading, error, data } = useQuery(
@@ -18,7 +18,7 @@ function PopularTv() {
   return (
     <div className="-ml-7 mx-10 bg-gray-700">
       <div className="ml-20">
-        <MovieRow results={data?.results || []} />
+        <TvRow results={data?.results || []} />
       </div>
     </div>
   );

@@ -4,12 +4,15 @@ import { Query, QueryClient, QueryClientProvider, useQuery } from "react-query";
 import SearchPage from "./SearchPage";
 import MoviePage from "./MoviePage";
 import TvShowsPage from "./TvShowsPage";
-import ItemPage from "./ItemPage";
+import MovieItemPage from "./MovieItemPage";
+import TvItemPage from "./TvItemPage";
 import Cast from "../Components/Cast";
 import { StorageIcon } from "../Components/Icons/StorageIcon";
 import { SearchBox } from "../Components/SearchBox";
 import { MovieList } from "../Components/MovieList";
 import FeedPage from "./FeedPage";
+import Player from "../Components/VideoPlayer";
+import { ItemList } from "../Components/ItemList";
 
 const queryClient = new QueryClient();
 
@@ -84,12 +87,9 @@ function Router() {
               <Route path="/MoviesPage" exact component={MoviePage} />
               <Route path="/ShowsPage" exact component={TvShowsPage} />
               <Route path="/Feed" exact component={FeedPage} />
-              <Route
-                path="/Item/:id/:type/ClosePath"
-                exact
-                component={ItemPage}
-              />
-
+              <Route path="/Player/:id/:type" exact component={Player} />
+              <Route path="/Item/:id/movie" exact component={MovieItemPage} />
+              <Route path="/Item/:id/tv" exact component={TvItemPage} />
               <Route path="/Search" component={Cast}>
                 <div className="bg-gray-700 h-full">
                   <div className=" mx-36 mt-14">
@@ -150,7 +150,7 @@ function Search(props: { query?: string; Page?: any }) {
   }
   return (
     <div className="ml-20">
-      <MovieList results={data?.results || []} />
+      <ItemList results={data?.results || []} />
     </div>
   );
 }
