@@ -1,13 +1,13 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { MovieRow } from "./MovieRow";
+import { TvRow } from "../Container/TV/TvRow";
 
-function NowPlaying() {
+function AirToday() {
   const { isLoading, error, data } = useQuery(
-    ["NowPlaying"],
+    ["AirToday"],
     () =>
       fetch(
-        `https://api.themoviedb.org/3/movie/now_playing?api_key=bc7d2aaf31b58d13aba81c2dfa7e88ab&language=en-US&page=1`
+        `https://api.themoviedb.org/3/tv/airing_today?api_key=bc7d2aaf31b58d13aba81c2dfa7e88ab&language=en-US`
       ).then((res) => res.json()),
     {}
   );
@@ -18,10 +18,10 @@ function NowPlaying() {
   return (
     <div className="-ml-7 mx-10 bg-gray-700">
       <div className="ml-20">
-        <MovieRow results={data?.results || []} />
+        <TvRow results={data?.results || []} />
       </div>
     </div>
   );
 }
 
-export default NowPlaying;
+export default AirToday;

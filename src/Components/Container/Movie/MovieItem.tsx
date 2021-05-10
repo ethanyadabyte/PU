@@ -55,7 +55,7 @@ export const MovieItem = (props: Movie) => {
   return (
     <div className="flex justify-left mt-16 ml-10 w-11/12  text-gray-200 bg-gray-700 ">
       <img
-        className=" rounded-lg  "
+        className="rounded-lg shadow-2xl"
         src={"https://image.tmdb.org/t/p//w342" + props.poster_path}
         alt=""
       />
@@ -70,17 +70,17 @@ export const MovieItem = (props: Movie) => {
         <p className="text-xl mt-4 text-gray-400"></p>
         <div className="flex ml-3">
           <Link to={`/Video/${props.Id}`}>
-            <p className="h-10 w-20 rounded-lg text-2xl text-red-500 mt-8 mb-0 pt-0.5 text-center mr-4 border-2 border-red-500">
+            <p className="h-10 w-20 rounded-lg text-2xl text-red-500 mt-8 mb-0 pt-0.5 text-center mr-4 border-2 border-red-500 hover:border-red-600 hover:text-red-600">
               {"Play"}
             </p>
           </Link>
           <Link to={`/Player/${props.Id}/movie`}>
-            <p className="h-10 w-20 rounded-lg text-2xl text-blue-500 mt-8 mb-0 pt-0.5 text-center border-2 border-blue-500">
+            <p className="h-10 w-20 rounded-lg text-2xl text-blue-500 mt-8 mb-0 pt-0.5 text-center border-2 border-blue-500 hover:border-blue-600 hover:text-blue-600">
               {"Trailer"}
             </p>
           </Link>
         </div>
-        <div className="h-64 w-7/12 bg-gray-700 -mr-4 flex flex-linear rounded-2xl ">
+        <div className="h-64 w-7/12 bg-gray-700 flex flex-linear rounded-2xl ">
           <div className="pt-10 pr-4 pl-0">
             <div className="p-4 ">
               <h1 className="">Language:</h1>
@@ -118,7 +118,6 @@ export const MovieItem = (props: Movie) => {
           </div>
         </div>
       </div>
-      <div className="h-96 w-50 bg-gray-500"></div>
     </div>
   );
 };

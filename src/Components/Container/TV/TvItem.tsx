@@ -35,10 +35,15 @@ export const TvItem = (props: Movie) => {
           {props.overview}
         </p>
         <p className="text-xl mt-4 text-gray-400"></p>
-        <div className="flex">
-          <Link to={`/Player/${props.Id}/tv`}>
-            <p className="h-10 w-20 rounded-2xl text-2xl bg-blue-500 mt-8 mb-0 pt-0.5 text-center  ">
+        <div className="flex ml-4">
+          <Link to={`/Video/${props.Id}`}>
+            <p className="h-10 w-20 rounded-lg text-2xl text-red-500 mt-8 mb-0 pt-0.5 text-center mr-4 border-2 border-red-500 hover:border-red-600 hover:text-red-600">
               {"Play"}
+            </p>
+          </Link>
+          <Link to={`/Player/${props.Id}/tv`}>
+            <p className="h-10 w-20 rounded-lg text-2xl text-blue-500 mt-8 mb-0 pt-0.5 text-center border-2 border-blue-500 hover:border-blue-600 hover:text-blue-600">
+              {"Trailer"}
             </p>
           </Link>
         </div>

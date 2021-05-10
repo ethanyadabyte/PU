@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { TvRow } from "../Components/TvRow";
+import { TvRow } from "../Container/TV/TvRow";
 
 function TopRatedTv() {
   const { isLoading, error, data } = useQuery(

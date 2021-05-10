@@ -13,13 +13,13 @@ interface MovieRowProps {
   results: Movie[];
 }
 
-export const TvRow = (props: MovieRowProps) => {
+export const MovieRow = (props: MovieRowProps) => {
   return (
-    <div className="  overflow-x-auto w-auto mx-44 rounded-2xl">
+    <div className="  overflow-x-auto scrollbar scrollbar-thumb-gray-400 scrollbar-track-gray-800 scrollbar-track-rounded-sm scrollbar-thumb-rounded-s w-auto mx-44 rounded-2xl">
       <ul className="flex flex-linare">
         {props.results.map((movie) => (
-          <Link to={`/Item/${movie.id}/tv`}>
-            <li className="mb-4  flex hide text-transparent hover:text-gray-200 w-52 h-70 rounded-lg ml-8 ">
+          <Link to={`/Item/${movie.id}/movie`}>
+            <li className="mb-8  flex hide text-transparent hover:text-gray-200 w-52 h-70 rounded-lg ml-8 mr-1 ">
               <img
                 className="w-52 h-70 rounded-lg"
                 src={

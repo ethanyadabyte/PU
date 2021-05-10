@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { MovieRow } from "../Components/MovieRow";
+import { MovieRow } from "../Container/Movie/MovieRow";
 
 function TopRated() {
   const { isLoading, error, data } = useQuery(

@@ -1,13 +1,13 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { TvRow } from "../Components/TvRow";
+import { TvRow } from "../Container/TV/TvRow";
 
-function AirToday() {
+function PopularTv() {
   const { isLoading, error, data } = useQuery(
-    ["AirToday"],
+    ["PopularTv"],
     () =>
       fetch(
-        `https://api.themoviedb.org/3/tv/airing_today?api_key=bc7d2aaf31b58d13aba81c2dfa7e88ab&language=en-US`
+        `https://api.themoviedb.org/3/tv/popular?api_key=bc7d2aaf31b58d13aba81c2dfa7e88ab&language=en-US`
       ).then((res) => res.json()),
     {}
   );
@@ -24,4 +24,4 @@ function AirToday() {
   );
 }
 
-export default AirToday;
+export default PopularTv;

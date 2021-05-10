@@ -1,6 +1,6 @@
 import React from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
-import { CastList } from "../Components/CastList";
+import { CastList } from "./CastList";
 
 const queryClient = new QueryClient();
 

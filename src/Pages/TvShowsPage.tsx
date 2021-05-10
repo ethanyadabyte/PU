@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
-import { TvList } from "../Components/TvList";
+import { TvList } from "../Components/Container/TV/TvList";
 
 const queryClient = new QueryClient();
 
@@ -22,13 +22,18 @@ function TvShowsPage() {
           <TvShows Page={page} />
         </div>
         <div className="text-lg  flex justify-center mt-8 ml-4 pb-4">
-          <button onClick={Min} className="px-4 m-1 bg-gray-500 rounded">
+          <button
+            onClick={Min}
+            className="px-4 m-1 bg-gray-500 rounded font-extrabold text-gray-700 hover:bg-gray-300 focus:outline-none"
+          >
             {"<"}
           </button>
-          <p className="px-3 m-1 bg-gray-500 rounded">{page}</p>
+          <p className="px-3 m-1 bg-gray-500 rounded font-bold text-gray-900">
+            {page}
+          </p>
           <button
             onClick={Plus}
-            className="px-4 m-1 focuse-ring-none bg-gray-500 rounded"
+            className="px-4 m-1 bg-gray-500 rounded font-extrabold text-gray-700 hover:bg-gray-300 focus:outline-none"
           >
             {">"}
           </button>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
-import { TvItem } from "../Components/TvItem";
-import Cast from "../Components/Cast";
+import { TvItem } from "../Components/Container/TV/TvItem";
+import Cast from "../Components/Container/Cast/Cast";
 
 const queryClient = new QueryClient();
 

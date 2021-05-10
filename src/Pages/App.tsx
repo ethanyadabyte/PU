@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
-import { MovieList } from "../Components/MovieList";
+import { MovieList } from "../Components/Container/Movie/MovieList";
 import { SearchBox } from "../Components/SearchBox";
 import { StorageIcon } from "../Components/Icons/StorageIcon";
 

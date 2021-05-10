@@ -1,10 +1,10 @@
 import React from "react";
-import NowPlaying from "../Components/NowPlaying";
-import Popular from "../Components/Popular";
-import PopularTv from "../Components/PopularTv";
-import TopRated from "../Components/TopRated";
-import TopRatedTv from "../Components/TopRatedTv";
-import AirToday from "../Components/AirToday";
+import NowPlaying from "../Components/Feed/NowPlaying";
+import Popular from "../Components/Feed/Popular";
+import PopularTv from "../Components/Feed/PopularTv";
+import TopRated from "../Components/Feed/TopRated";
+import TopRatedTv from "../Components/Feed/TopRatedTv";
+import AirToday from "../Components/Feed/AirToday";
 
 function FeedPage() {
   return (
