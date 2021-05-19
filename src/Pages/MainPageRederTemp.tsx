@@ -77,7 +77,6 @@ function Router() {
                         </li>
                       </ul>
                     </div>
-
                     <div className=" ml-96">
                       <Link to="/Search">
                         <SearchBox value={search} onChange={setSearch} />
@@ -148,7 +147,7 @@ function Search(props: { query?: string; Page?: any }) {
     return <h1 className="text-red-500 text-6xl text-center py-96">Error</h1>;
   if (props.query.length <= 0) {
     return (
-      <h1 className="text-green-200 text-6xl text-center py-96">
+      <h1 className="text-green-200 text-6xl text-center py-96 animate-pulse ">
         Please Enter What You Are Searching For
       </h1>
     );
