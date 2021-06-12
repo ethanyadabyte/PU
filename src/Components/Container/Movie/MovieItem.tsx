@@ -59,8 +59,8 @@ export const MovieItem = (props: Movie) => {
         src={"https://image.tmdb.org/t/p//w342" + props.poster_path}
         alt=""
       />
-      <div className=" ml-10 mt-3 ">
-        <p className="text-4xl mt-2   font-medium ">
+      <div className="ml-10 mt-3">
+        <p className="text-4xl mt-2 font-medium ">
           {props.original_title}
           {props.original_name}
         </p>
@@ -80,7 +80,7 @@ export const MovieItem = (props: Movie) => {
             </p>
           </Link>
         </div>
-        <div className="h-64 w-7/12 bg-gray-700 flex flex-linear rounded-2xl ">
+        <div className="h-64 w-7/12 bg-gray-700 flex flex-linear rounded-2xl">
           <div className="pt-10 pr-4 pl-0">
             <div className="p-4 ">
               <h1 className="">Language:</h1>

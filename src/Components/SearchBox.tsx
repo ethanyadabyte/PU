@@ -10,8 +10,8 @@ export const SearchBox = (props: SearchBoxProps) => {
 
   return (
     <div className="relative">
-      <Link to="/Search">
-        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+        <Link to="/Search">
           <svg
             className="h-4 w-4 text-gray-500"
             xmlns="http://www.w3.org/2000/svg"
@@ -25,25 +25,25 @@ export const SearchBox = (props: SearchBoxProps) => {
               clip-rule="evenodd"
             />
           </svg>
-        </div>
+        </Link>
+      </div>
 
-        <input
-          id="search"
-          name="search"
-          className="block w-64 pl-10 pr-3 py-2 rounded-md border border-none leading-5 bg-gray-600 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-none focus:ring-none focus:border-none sm:text-sm text-gray-400"
-          placeholder="Search a movie"
-          type="search"
-          value={value}
-          onChange={(event) => setValue(event.target.value)}
-          onKeyUp={(event: any) => {
-            if (event.keyCode === 13) {
-              // Cancel the default action, if needed
-              event.preventDefault();
-              props.onChange && props?.onChange(event.target.value);
-            }
-          }}
-        />
-      </Link>
+      <input
+        id="search"
+        name="search"
+        className="block w-64 pl-10 pr-3 py-2 rounded-md border border-none leading-5 bg-gray-600 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-none focus:ring-none focus:border-none sm:text-sm text-gray-400"
+        placeholder="Search a movie"
+        type="search"
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
+        onKeyUp={(event: any) => {
+          if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            props.onChange && props?.onChange(event.target.value);
+          }
+        }}
+      />
     </div>
   );
 };

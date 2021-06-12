@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SearchBox } from "../Components/SearchBox";
+import { SearchBoxD } from "../Components/SearchBoxD";
 import { action } from "@storybook/addon-actions";
 
 export default {
@@ -12,7 +12,7 @@ export const Search = () => {
   return (
     <div className="w-1/4">
       {" "}
-      <SearchBox
+      <SearchBoxD
         onChange={(value) => {
           setValue(value);
           action("searchBox changed")(value);

@@ -17,30 +17,27 @@ function MoviePage() {
   }
 
   return (
-    <div className="bg-gray-700  ">
-      <QueryClientProvider client={queryClient}>
-        <div className="mx-36 mt-14 bg-gray-700">
-          <Movies Page={page} />
-        </div>
-        <div className="text-lg  flex justify-center mt-8 ml-4 pb-4">
-          <button
-            onClick={Min}
-            className="px-4 m-1 bg-gray-500 rounded font-extrabold text-gray-700 hover:bg-gray-300 focus:outline-none"
-          >
-            {"<"}
-          </button>
-          <p className="px-3 m-1 bg-gray-500 rounded font-bold text-gray-900">
-            {page}
-          </p>
-          <button
-            onClick={Plus}
-            className="px-4 m-1 bg-gray-500 rounded font-extrabold text-gray-700 hover:bg-gray-300 focus:outline-none"
-          >
-            {">"}
-          </button>
-        </div>
-      </QueryClientProvider>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <Movies Page={page} />
+
+      <div className="text-lg  flex justify-center mt-8 pb-4">
+        <button
+          onClick={Min}
+          className="px-4 m-1 bg-gray-500 rounded font-extrabold text-gray-700 hover:bg-gray-300 focus:outline-none"
+        >
+          {"<"}
+        </button>
+        <p className="px-3 m-1 bg-gray-500 rounded font-bold text-gray-900">
+          {page}
+        </p>
+        <button
+          onClick={Plus}
+          className="px-4 m-1 bg-gray-500 rounded font-extrabold text-gray-700 hover:bg-gray-300 focus:outline-none"
+        >
+          {">"}
+        </button>
+      </div>
+    </QueryClientProvider>
   );
 }
 
@@ -53,8 +50,41 @@ function Movies(props: { Page: any }) {
       ).then((res) => res.json()),
     {}
   );
+  const Load = [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+  ];
 
-  if (isLoading) return <div></div>;
+  if (isLoading)
+    return (
+      <div className="ml-20">
+        <ul className="grid mx-36 mt-14 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 gap-none pl-4 bg-gray-700 ">
+          {Load.map((movie) => (
+            <div className="my-3">
+              <div className="w-52 h-72 rounded-md animate-pulse bg-gray-600 mx-2 "></div>
+            </div>
+          ))}
+        </ul>
+      </div>
+    );
 
   if (error) return <div>An error has occurred {JSON.stringify(error)} </div>;
 
