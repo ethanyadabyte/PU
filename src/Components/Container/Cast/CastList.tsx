@@ -18,7 +18,7 @@ export const CastList = (props: CastProps) => {
       <ul className="flex flex-linare">
         {props.results.map((cast) => (
           <Link to={`/item/${cast.id}/person`}>
-            <li className="my-4 px-8 text-gray-200 rounded-lg  ml-1">
+            <li className="my-4 px-8 text-gray-500  dark:text-gray-200 rounded-lg  ml-1">
               <img
                 className=" rounded-2xl shadow-2xl"
                 src={"https://image.tmdb.org/t/p/w154" + cast.profile_path}
@@ -28,7 +28,9 @@ export const CastList = (props: CastProps) => {
                 <p className="text-base mt-2 w-32 p-0 font-medium">
                   {cast.character}
                 </p>
-                <p className="text-base w-32 text-gray-400">{cast.name}</p>
+                <p className="text-base w-32 text-gray-700 dark:text-gray-400">
+                  {cast.name}
+                </p>
               </div>
             </li>
           </Link>

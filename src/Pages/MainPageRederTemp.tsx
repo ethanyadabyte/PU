@@ -8,12 +8,11 @@ import TvItemPage from "./TvItemPage";
 import FeedPage from "./FeedPage";
 import Player from "../Components/Video/VideoPlayer";
 import VideoJs from "../Components/Video/Video";
-import { NavBar } from "../Components/NavBar";
-import { ItemList } from "../Components/ItemList";
 import { Link } from "react-router-dom";
 import { StorageIcon } from "../Components/Icons/StorageIcon";
 import { SearchBox } from "../Components/SearchBox";
 import CastItemPage from "./CastItemPage";
+import { Grid1 } from "../Components/Container/All/Grid1";
 
 const queryClient = new QueryClient();
 
@@ -31,12 +30,16 @@ function Router() {
   }
   if (search.length <= 0) {
   }
+  let Block;
+  if (search == "") {
+    Block = "opacity-0";
+  }
   return (
-    <div className="bg-gray-700 h-screen scrollbar scrollbar-thumb-gray-400 scrollbar-track-gray-800 scrollbar-track-rounded-sm scrollbar-thumb-rounded-sm">
+    <div className=" bg-white dark:bg-gray-700 h-screen w-screen scrollbar scrollbar-thumb-gray-400 scrollbar-track-gray-800 scrollbar-track-rounded-sm scrollbar-thumb-rounded-sm absolute">
       <div className="overflow-visible ">
         <QueryClientProvider client={queryClient}>
           <BrowserRouter>
-            <div className="h-20 bg-gray-700 p-4">
+            <div className="h-20 bg-white dark:bg-gray-700 p-4">
               <div className="flex justify-between py-5">
                 <div className="flex">
                   <div className=" mr-10 ml-14">
@@ -93,23 +96,25 @@ function Router() {
               <Route path="/item/:id/person" exact component={CastItemPage} />
               <Route path="/Video/:id/" exact component={VideoJs} />
               <Route path="/Search" exact>
-                <div className="mx-36 mt-14 ">
+                <div className="mx-36 mt-14">
                   <Search query={search} Page={page} />
                 </div>
-                <div className="text-lg  flex justify-center mt-8 ml-4">
-                  <button
-                    onClick={Min}
-                    className="px-4 m-1 bg-gray-500 rounded"
-                  >
-                    {"<"}
-                  </button>
-                  <p className="px-3 m-1 bg-gray-500 rounded">{page}</p>
-                  <button
-                    onClick={Plus}
-                    className="px-4 m-1 focuse-ring-none bg-gray-500 rounded"
-                  >
-                    {">"}
-                  </button>
+                <div className={Block}>
+                  <div className="text-lg flex justify-center mt-8 mb-4 ">
+                    <button
+                      onClick={Min}
+                      className="px-4 m-1 bg-gray-500 rounded"
+                    >
+                      {"<"}
+                    </button>
+                    <p className="px-3 m-1 bg-gray-500 rounded">{page}</p>
+                    <button
+                      onClick={Plus}
+                      className="px-4 m-1 focuse-ring-none bg-gray-500 rounded"
+                    >
+                      {">"}
+                    </button>
+                  </div>
                 </div>
               </Route>
             </Switch>
@@ -144,8 +149,8 @@ export function Search(props: { query?: string; Page?: any }) {
     );
   }
   return (
-    <div className="ml-20">
-      <ItemList results={data?.results || []} />
+    <div className="flex justify-center">
+      <Grid1 results={data?.results || []} />
     </div>
   );
 }

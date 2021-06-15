@@ -31,7 +31,7 @@ export const SearchBox = (props: SearchBoxProps) => {
       <input
         id="search"
         name="search"
-        className="block w-64 pl-10 pr-3 py-2 rounded-md border border-none leading-5 bg-gray-600 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-none focus:ring-none focus:border-none sm:text-sm text-gray-400"
+        className="block w-64 pl-10 pr-3 py-2 rounded-md border border-none leading-5 bg-gray-300 dark:bg-gray-600 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-none focus:ring-none focus:border-none sm:text-sm text-gray-400"
         placeholder="Search a movie"
         type="search"
         value={value}

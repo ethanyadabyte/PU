@@ -15,7 +15,7 @@ interface MovieListProps {
 
 export const MovieList = (props: MovieListProps) => {
   return (
-    <ul className="grid mx-36 mt-14 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3  w-auto pl-4 bg-gray-700">
+    <ul className="grid mx-36 mt-14 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3  w-auto pl-4 dark:bg-gray-700">
       {props.results.map((movie) => (
         <Link to={`/Item/${movie.id}/movie`}>
           <li className="m-4 flex hide text-transparent hover:text-gray-200 w-52 h-70 rounded-lg">

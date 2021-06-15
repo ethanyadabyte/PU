@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import { Grid1 } from "../Components/Container/All/Grid1";
 import { TvList } from "../Components/Container/TV/TvList";
 
 const queryClient = new QueryClient();
@@ -18,7 +19,7 @@ function TvShowsPage() {
   return (
     <div className="bg-gray-700">
       <QueryClientProvider client={queryClient}>
-        <div className="mx-36 mt-14 bg-gray-700">
+        <div className="mx-36 mt-14">
           <TvShows Page={page} />
         </div>
         <div className="text-lg  flex justify-center mt-8 ml-4 pb-4">
@@ -58,8 +59,8 @@ function TvShows(props: { Page: any }) {
   if (error) return <div> {JSON.stringify(error)} </div>;
 
   return (
-    <div className="ml-20">
-      <TvList results={data?.results || []} />
+    <div className="flex justify-center">
+      <Grid1 results={data?.results || []} />
     </div>
   );
 }

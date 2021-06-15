@@ -1,5 +1,13 @@
 module.exports = {
   plugins: [require("tailwind-scrollbar")],
+  darkMode:"media",
+   theme: {extend: {
+    spacing: {
+	  '220': '13.75rem',
+      '330': '20.625rem'
+   },
+   },
+   },
   variants: {
     // ...
     scrollbar: ["dark", "rounded"],
@@ -29,4 +37,5 @@ module.exports = {
 	    "smc": "580px",
         // => @media (min-width: 580px) { ... }
     },
+
   }

@@ -10,7 +10,7 @@ interface Id {
 }
 function Cast(props: Id) {
   return (
-    <div className="bg-gray-700">
+    <div className="dark:bg-gray-700">
       <QueryClientProvider client={queryClient}>
         <Search query={props.ID} Type={props.Type} />
       </QueryClientProvider>
