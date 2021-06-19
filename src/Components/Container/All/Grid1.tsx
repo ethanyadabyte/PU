@@ -19,7 +19,7 @@ interface ItemInfoProps {
 
 export const Grid1 = (props: ItemInfoProps) => {
   return (
-    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-x-16 gap-y-8 grid-flow-rows bg-gray-700 p-3">
+    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-x-16 gap-y-8 grid-flow-rows dark:bg-gray-700 p-3">
       {props.results.map((movie) => (
         <div className="">
           <GridItem

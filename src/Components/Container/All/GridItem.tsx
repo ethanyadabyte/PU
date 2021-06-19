@@ -13,6 +13,7 @@ interface Info {
 
 export const GridItem = (props: Info) => {
   let A = props.Type;
+  let B =
   if (props.Type === undefined && props.Title != undefined) {
     A = "movie";
   }
@@ -21,7 +22,10 @@ export const GridItem = (props: Info) => {
   }
   return (
     <Link to={`/Item/${props.id}/${A}`}>
-      <div className="w-220 h-330 m-0 md:mx-4 lg:mx-4 xl:mx-4 2xl:mx-4">
+      <div
+        className="w-220 h-330 m-0 md:mx-4 lg:mx-4 xl:mx-4 2xl:mx-4 shadow-2xl dark:shadow-none rounded-md
+      "
+      >
         <img
           src={`https://image.tmdb.org/t/p/w220_and_h330_face${props.Img}`}
           className="rounded-md absolute"

@@ -17,7 +17,7 @@ function TvShowsPage() {
     setPage(1);
   }
   return (
-    <div className="bg-gray-700">
+    <div className="dark:bg-gray-700">
       <QueryClientProvider client={queryClient}>
         <div className="mx-36 mt-14">
           <TvShows Page={page} />
