@@ -16,7 +16,7 @@ function PopularTv() {
 
   if (error) return <div>An error has occurred {JSON.stringify(error)} </div>;
   return (
-    <div className="-ml-7 mx-10 bg-gray-700">
+    <div className="-ml-7 mx-10 dark:bg-gray-700">
       <div className="ml-20">
         <TvRow results={data?.results || []} />
       </div>

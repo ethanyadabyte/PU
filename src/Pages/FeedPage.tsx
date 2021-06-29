@@ -8,9 +8,9 @@ import AirToday from "../Components/Feed/AirToday";
 
 function FeedPage() {
   return (
-    <div className="h-full bg-gray-700">
+    <div className="h-full dark:bg-gray-700">
       <div className="mt-20">
-        <h1 className="text-6xl text-blue-500 font-bold text-center mb-8 subpixel-antialiased">
+        <h1 className="text-6xl text-gray-400 font-bold text-center mb-8 subpixel-antialiased">
           Top 3 Movies
         </h1>
         <Popular />
