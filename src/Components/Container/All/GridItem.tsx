@@ -13,7 +13,7 @@ interface Info {
 
 export const GridItem = (props: Info) => {
   let A = props.Type;
-  let B =
+  let B;
   if (props.Type === undefined && props.Title != undefined) {
     A = "movie";
   }
@@ -33,7 +33,6 @@ export const GridItem = (props: Info) => {
         <div className="rounded-md absolute w-220 h-330 opacity-0 bg-black hover:opacity-80">
           <h1 className="text-base text-gray-200 mt-2 mx-2 text-center font-medium ">
             {props.Title}
-            {props.Title1}
             {props.Title2}
           </h1>
           <p className="text-xs m-3 h-44 overflow-hidden text-justify text-white  ">
