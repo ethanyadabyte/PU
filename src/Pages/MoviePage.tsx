@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import { Grid1 } from "../Components/Container/All/Grid1";
-import { MovieList } from "../Components/Container/Movie/MovieList";
 
 const queryClient = new QueryClient();
 
@@ -25,16 +24,16 @@ function MoviePage() {
       <div className="text-lg  flex justify-center mt-8 pb-4">
         <button
           onClick={Min}
-          className="px-4 m-1 dark:bg-gray-500 rounded font-extrabold dark:text-gray-700 hover:bg-gray-300 focus:outline-none"
+          className="px-4 m-1 bg-gray-300 dark:bg-gray-500 text-gray-700 rounded font-extrabold dark:text-gray-700 hover:bg-gray-300 focus:outline-none"
         >
           {"<"}
         </button>
-        <p className="px-3 m-1 dark:bg-gray-500 rounded font-bold dark:text-gray-900">
+        <p className="px-3 m-1 bg-gray-300 dark:bg-gray-500 text-gray-700 rounded font-bold dark:text-gray-900">
           {page}
         </p>
         <button
           onClick={Plus}
-          className="px-4 m-1 dark:bg-gray-500 rounded font-extrabold dark:text-gray-700 hover:bg-gray-300 focus:outline-none"
+          className="px-4 m-1 bg-gray-300 dark:bg-gray-500 text-gray-700 rounded font-extrabold dark:text-gray-700 hover:bg-gray-300 focus:outline-none"
         >
           {">"}
         </button>

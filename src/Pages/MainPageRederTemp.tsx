@@ -103,14 +103,16 @@ function Router() {
                   <div className="text-lg flex justify-center mt-8 mb-4 ">
                     <button
                       onClick={Min}
-                      className="px-4 m-1 bg-gray-500 rounded"
+                      className="px-4 m-1 bg-gray-300 dark:bg-gray-500 text-gray-700 rounded font-extrabold dark:text-gray-700 hover:bg-gray-300 focus:outline-none"
                     >
                       {"<"}
                     </button>
-                    <p className="px-3 m-1 bg-gray-500 rounded">{page}</p>
+                    <p className="px-3 m-1 bg-gray-300 dark:bg-gray-500 text-gray-700 rounded font-bold dark:text-gray-900">
+                      {page}
+                    </p>
                     <button
                       onClick={Plus}
-                      className="px-4 m-1 focuse-ring-none bg-gray-500 rounded"
+                      className="px-4 m-1 bg-gray-300 dark:bg-gray-500 text-gray-700 rounded font-extrabold dark:text-gray-700 hover:bg-gray-300 focus:outline-none"
                     >
                       {">"}
                     </button>

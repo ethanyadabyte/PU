@@ -13,6 +13,7 @@ function MovieItemPage(match) {
         <p className="text-2xl mt-7 ml-32 text-gray-600 dark:text-gray-200">
           Cast
         </p>
+
         <Cast ID={match.match.params.id} Type="movie" />
       </QueryClientProvider>
     </div>

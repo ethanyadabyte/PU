@@ -64,7 +64,7 @@ export const MovieItem = (props: Movie) => {
           {props.original_title}
           {props.original_name}
         </p>
-        <p className="text-justify text-gray-600 dark:text-gray-400 text-xs w-8/12 mt-3">
+        <p className="text-justify text-gray-500 font-medium dark:text-gray-400 text-xs w-8/12 mt-3">
           {props.overview}
         </p>
         <p className="text-xl mt-4 text-gray-400"></p>

@@ -6,7 +6,7 @@ const queryClient = new QueryClient();
 
 function CastItemPage(match) {
   return (
-    <div className="bg-gray-700 p-4">
+    <div className="dark:bg-gray-700 p-4">
       <QueryClientProvider client={queryClient}>
         <CastItemQ Id={match.match.params.id} />
       </QueryClientProvider>

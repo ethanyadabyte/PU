@@ -18,8 +18,10 @@ export const CastItem = (props: Cast) => {
         <CastImg id={props.Id} />
       </div>
       <div className="flex flex-col ml-10 mt-3">
-        <h1 className="text-4xl mt-2 font-medium">{props.name}</h1>
-        <h1 className="text-justify text-gray-400 text-xs w-96 mt-3">
+        <h1 className="text-4xl mt-2 font-medium text-gray-700 dark:text-gray-200">
+          {props.name}
+        </h1>
+        <h1 className="text-justify text-gray-500 font-medium dark:text-gray-400  text-xs w-96 mt-3">
           {props.biography}
         </h1>
       </div>

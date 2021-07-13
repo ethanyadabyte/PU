@@ -7,10 +7,12 @@ const queryClient = new QueryClient();
 
 function ItemPage(match) {
   return (
-    <div className="bg-gray-700 p-4 ">
+    <div className="dark:bg-gray-700 p-4 ">
       <QueryClientProvider client={queryClient}>
         <Search Id={match.match.params.id} />
-        <p className="text-2xl mt-7 ml-32 text-gray-200">Cast</p>
+        <p className="text-2xl mt-7 ml-32 text-gray-600 dark:text-gray-200">
+          Cast
+        </p>
         <Cast ID={match.match.params.id} Type="tv" />
       </QueryClientProvider>
     </div>
