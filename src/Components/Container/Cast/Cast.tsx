@@ -33,7 +33,7 @@ function Search(props: { query?: string; Type?: any }) {
   if (error) return <div>An error has occurred {JSON.stringify(error)} </div>;
 
   return (
-    <div className="-ml-7 mt-0 ">
+    <div className="-ml-7 mt-0">
       <CastList results={data?.cast || []} />
     </div>
   );
