@@ -11,9 +11,9 @@ export const Seasons = (props: SeasonsProps) => {
       <ul className="grid grid-cols-7">
         {props.Seasons.map((Season) => (
           <Link to={`/item/${Season.id}/person`}>
-            <li className="my-4 px-8 h-auto text-gray-500 dark:text-gray-200 rounded-lg ml-1 ">
+            <li className="my-4 px-8 h-auto text-gray-500 dark:text-gray-200 rounded-lg ml-1 h-">
               <img
-                className="rounded-2xl shadow-2xl"
+                className="rounded-lg shadow-2xl"
                 src={"https://image.tmdb.org/t/p/w185" + Season.poster_path}
                 alt=""
               />
