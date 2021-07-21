@@ -7,14 +7,14 @@ interface SeasonsProps {
 
 export const Seasons = (props: SeasonsProps) => {
   return (
-    <div className="scrollbar scrollbar-thumb-gray-400 scrollbar-track-gray-800 scrollbar-track-rounded-sm scrollbar-thumb-rounded-sm w-auto mx-36 mt-4 mb-4">
-      <ul className="flex flex-linare">
+    <div className="w-auto mx-36 mt-4 mb-4">
+      <ul className="grid grid-cols-7">
         {props.Seasons.map((Season) => (
           <Link to={`/item/${Season.id}/person`}>
-            <li className="my-4 px-8 text-gray-500 dark:text-gray-200 rounded-lg ml-1">
+            <li className="my-4 px-8 h-auto text-gray-500 dark:text-gray-200 rounded-lg ml-1 ">
               <img
                 className="rounded-2xl shadow-2xl"
-                src={"https://image.tmdb.org/t/p/w154" + Season.poster_path}
+                src={"https://image.tmdb.org/t/p/w185" + Season.poster_path}
                 alt=""
               />
               <div className="ml-2 mb-6">
