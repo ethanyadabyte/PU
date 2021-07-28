@@ -19,7 +19,7 @@ export const TvList = (props: MovieListProps) => {
         <Link to={`/Item/${movie.id}/tv`}>
           <li className="my-4 flex hide text-transparent hover:text-white w-52 h-70 rounded-lg ml-2">
             <img
-              className="w-52 h-70 rounded-lg  "
+              className="w-52 h-70 rounded-lg"
               src={
                 "https://image.tmdb.org/t/p/w220_and_h330_face" +
                 movie.poster_path

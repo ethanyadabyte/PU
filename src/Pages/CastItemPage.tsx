@@ -6,7 +6,7 @@ const queryClient = new QueryClient();
 
 function CastItemPage(match) {
   return (
-    <div className=" p-4">
+    <div className="dark:bg-gray-700 p-4">
       <QueryClientProvider client={queryClient}>
         <CastItemQ Id={match.match.params.id} />
       </QueryClientProvider>
@@ -29,7 +29,7 @@ function CastItemQ(props: { Id: string }) {
   if (error) return <div>An error has occurred {JSON.stringify(error)} </div>;
 
   return (
-    <div className="flex md:ml-20 ml-0">
+    <div className="">
       <CastItem
         Id={props.Id}
         name={data.name || []}
