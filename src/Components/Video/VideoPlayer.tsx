@@ -20,13 +20,13 @@ const queryClient = new QueryClient();
 
 function Player(match) {
   return (
-    <div className="bg-gray-700">
+    <div className="dark:bg-gray-700 bg-white">
       <QueryClientProvider client={queryClient}>
         <div className="flex justify-center mt-20">
           <YoutubePlayer
             src={YoutubeUrl({
               Id: match.match.params.id,
-              type: match.match.params.type,
+              type: match.match.params.type
             })} // Reqiured
             width={1280}
             height={720}
